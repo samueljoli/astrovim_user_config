@@ -20,9 +20,15 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<S-l>"] = {":bnext<CR>", desc = "Navigate to the next buffer"},
+    ["<S-h>"] = {":bprevious<CR>", desc = "Navigate to the previous buffer"}
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  x = {
+    ["J"] = { ":move '>+1<CR>gv-gv", noremap = true, desc = "Move line down" },
+    ["K"] = { ":move '<-2<CR>gv-gv", noremap = true, desc = "Move line up" },
+  }
 }

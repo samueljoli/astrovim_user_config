@@ -21,7 +21,10 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<S-l>"] = {":bnext<CR>", desc = "Navigate to the next buffer"},
-    ["<S-h>"] = {":bprevious<CR>", desc = "Navigate to the previous buffer"}
+    ["<S-h>"] = {":bprevious<CR>", desc = "Navigate to the previous buffer"},
+
+    -- Plugin specific key mappings
+    ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Trouble Workspace" },
   },
   t = {
     -- setting a mapping to false will disable it

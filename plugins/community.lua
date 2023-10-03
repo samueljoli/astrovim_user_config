@@ -2,6 +2,8 @@ return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.completion.copilot-lua"},
+  { import = "astrocommunity.completion.copilot-lua-cmp"},
   {
     "simrat39/rust-tools.nvim",
     opts = function()

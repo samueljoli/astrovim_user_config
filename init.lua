@@ -27,6 +27,22 @@ return {
   },
 
   lsp = {
+    on_attach = function(client, bufnr)
+      local capabilities = client.server_capabilities
+
+      if capabilities.renameProvider then
+        local keymap = vim.api.nvim_set_keymap
+
+        local opts = { noremap = true, silent = true }
+
+        keymap("n", "<leader>lr", [[<Cmd>lua vim.lsp.buf.rename()<CR><Cmd>lua vim.cmd('silent! wa')<CR>]], opts)
+
+        -- lsp_mappings.n["<leader>lr"] = {
+        --   function() vim.lsp.buf.rename() end,
+        --   desc = "Rename current symbol",
+        -- }
+      end
+    end,
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
